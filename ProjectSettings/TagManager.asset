@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy
-  - Pinchos
   - DeadZone
+  - Spikes
   layers:
   - Default
   - TransparentFX

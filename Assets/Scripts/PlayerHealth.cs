@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
                 SubstractHealth(1);
             }
         }
-        else if (other.gameObject.CompareTag("Pinchos"))
+        else if (other.gameObject.CompareTag("Spikes"))
         {
             SubstractHealth(2);
         }
