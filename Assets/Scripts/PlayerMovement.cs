@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = horizontalAxis < 0;   
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
         {
             playerRb.AddForce(Vector2.up * jumpSpeed);
             isGrounded = false;
