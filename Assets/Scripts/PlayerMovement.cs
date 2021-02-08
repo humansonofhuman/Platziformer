@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,13 +20,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
-        playerRb.velocity = new Vector2( horizontalAxis * speed
+        playerRb.velocity = new Vector2(horizontalAxis * speed
                                        , playerRb.velocity.y);
 
         playerAnim.SetBool("isWalking", horizontalAxis != 0);
         if (horizontalAxis != 0)
         {
-            spriteRenderer.flipX = horizontalAxis < 0;   
+            spriteRenderer.flipX = horizontalAxis < 0;
         }
 
         if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
@@ -41,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
 
     void EmptyHearts()
     {
-        for(int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < hearts.Length; i++)
         {
             if (health - 1 < i)
                 hearts[i].gameObject.SetActive(false);
