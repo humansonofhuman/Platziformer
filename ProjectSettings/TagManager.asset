@@ -48,6 +48,9 @@ TagManager:
   - name: BackgroundProps
     uniqueID: 1011523591
     locked: 0
+  - name: Tutorial
+    uniqueID: 1251989531
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
