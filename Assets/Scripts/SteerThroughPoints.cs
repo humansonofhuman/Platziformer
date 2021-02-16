@@ -1,29 +1,30 @@
 using UnityEngine;
 
-public class MoveBetween : MonoBehaviour
+public class SteerThroughPoints : MonoBehaviour
 {
-    [SerializeField] float speed;
-    [SerializeField] float tolerance = 0.02f;
+    [SerializeField] float tolerance;
     [SerializeField] Transform pointA;
     [SerializeField] Transform pointB;
     Transform currentPoint;
+    Directable directable;
 
     void Start()
     {
+        directable = GetComponent<Directable>();
         currentPoint = pointA;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (ItReached(currentPoint.position))
             SwitchPoint();
-        Move();
+        UpdateDirection();
     }
 
     bool ItReached(Vector3 point)
     {
         float distance = Vector3.Distance(point, transform.position);
-        return distance < (speed * tolerance);
+        return distance < tolerance;
     }
 
     void SwitchPoint()
@@ -34,9 +35,10 @@ public class MoveBetween : MonoBehaviour
             currentPoint = pointA;
     }
 
-    void Move()
+    void UpdateDirection()
     {
         Vector2 direction = currentPoint.position - transform.position;
-        transform.position += (Vector3)direction.normalized * (speed * Time.deltaTime);
+        direction.Normalize();
+        directable.Direction = direction;
     }
 }
