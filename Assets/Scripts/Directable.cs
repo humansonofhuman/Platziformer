@@ -1,12 +1,6 @@
 using System;
 using UnityEngine;
 
-public interface IDirectable
-{
-    Vector2 Direction { get; set; }
-    Action<Vector2> OnDirectionChange { get; set; }
-};
-
 public class Directable : MonoBehaviour
 {
     Vector2 _direction;
