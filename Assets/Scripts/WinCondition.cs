@@ -2,16 +2,15 @@
 
 public class WinCondition : MonoBehaviour
 {
-    public SceneChanger sceneChanger;
     public bool isLastLevel = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             if (isLastLevel)
-                sceneChanger.ChangeSceneTo("WinScreen");
+                SceneChanger.ChangeSceneTo("WinScreen");
             else
-                sceneChanger.NextScene();
+                SceneChanger.NextScene();
         }
     }
 }

@@ -5,13 +5,12 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public Image[] hearts;
-    public SceneChanger sceneChanger;
     int health = 3;
     bool hasCooldown = false;
 
     public void Kill()
     {
-        sceneChanger.ChangeSceneTo("LoseScreen");
+        SceneChanger.ChangeSceneTo("LoseScreen");
     }
 
     private void OnCollisionEnter2D(Collision2D other)
