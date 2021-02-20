@@ -1,11 +1,21 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public Image[] hearts;
-    int health = 3;
+    [SerializeField] private IntEventChannelSO _onHealthChange = default;
+    int _health = 3;
+    private int Health
+    {
+        get => _health;
+        set
+        {
+            _health = value;
+            if (_onHealthChange != null)
+                _onHealthChange.RaiseEvent(value);
+        }
+    }
+
     bool hasCooldown = false;
 
     public void Kill()
@@ -32,28 +42,17 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!hasCooldown)
         {
-            if (health > 0)
+            if (Health > 0)
             {
-                health -= damage;
+                Health -= damage;
                 hasCooldown = true;
 
                 StartCoroutine(Cooldown());
             }
-            if (health <= 0)
+            if (Health <= 0)
             {
                 Kill();
             }
-
-            EmptyHearts();
-        }
-    }
-
-    void EmptyHearts()
-    {
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            if (health - 1 < i)
-                hearts[i].gameObject.SetActive(false);
         }
     }
 
