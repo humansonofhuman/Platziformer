@@ -37,11 +37,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (IsGround(other))
         {
             isGrounded = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (IsGround(other))
+        {
+            isGrounded = false;
+        }
+    }
+
+    private bool IsGround(Collider2D collider)
+    {
+        return collider.gameObject.CompareTag("Ground")
+        || collider.gameObject.CompareTag("Spikes");
     }
 }
