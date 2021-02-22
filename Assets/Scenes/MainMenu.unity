@@ -622,7 +622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &736561624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1279,7 +1279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1500561302
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1338,11 +1338,12 @@ MonoBehaviour:
 
 
     Done
-    with the knowledge learned from Platzi course "Curso de Programacion de Videojuegos
-    2D con Unity" and others.
+    with the assets and knowledge learned from Platzi course "Curso de Programacion
+    de Videojuegos 2D con Unity" and others.
 
 
-    Assets provided by Platzi.'
+    Thanks to my little brother Oki
+    for helping me to design the second level :)'
 --- !u!222 &1500561304
 CanvasRenderer:
   m_ObjectHideFlags: 0
