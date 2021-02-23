@@ -45,7 +45,7 @@ PlayerSettings:
   defaultScreenWidth: 960
   defaultScreenHeight: 640
   defaultScreenWidthWeb: 960
-  defaultScreenHeightWeb: 540
+  defaultScreenHeightWeb: 640
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   m_MTRendering: 1
@@ -550,7 +550,8 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: 
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
